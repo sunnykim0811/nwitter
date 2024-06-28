@@ -69,7 +69,7 @@ return(
           {newAccount? "Sing In": "Create Account"}
         </span>
         <button onClick={onSocialClick} name="google">Continue with Google</button>
-        <button onClick={onSocialClick} name="github">Contibut with Github</button>
+        <button onClick={onSocialClick} name="github">Continue with Github</button>
       </div>
     </div>
   )
