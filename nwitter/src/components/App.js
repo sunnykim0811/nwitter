@@ -4,7 +4,7 @@ import {authService} from "fbase";
 import { updateProfile } from "firebase/auth";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   const [init, setInit] =useState(false);
   const [userObj, setUserObj] = useState(null);
 
@@ -18,7 +18,7 @@ function App() {
         updateProfile: (args) => updateProfile(user, args)
       });}
 
-    else{setIsLoggedIn(false);}
+    else{setUserObj(false);}
     setInit(true);});
   },[]);
 
