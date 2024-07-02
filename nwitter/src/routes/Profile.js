@@ -71,13 +71,13 @@ const Profile =({userObj, refreshUser})=>{
   };
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input type="text" placeholder="프로필 이름 수정" onChange={onChange} value={newDisplayName} />
-        <input type="submit" value="수정" />
+    <div className="container">
+      <form onSubmit={onSubmit} className="profileForm">
+        <input type="text" placeholder="프로필 이름 수정" onChange={onChange} value={newDisplayName} autoFocus className="formInput" />
+        <input type="submit" value="Update Profile" className="formBtn" style={{marginTop:10}}/>
       </form>
-      <button onClick={onLogOutClick}> Log Out </button>
-      <div>
+      <span className="formBtn" style={{marginTop:20}} onClick={onLogOutClick}> Log Out </span>
+      <div style={{marginTop:40}}>
         {nweets.map((nweet) => (
           <div key={nweet.id}>
             <Nweet nweetObj={nweet} isOwner={nweet.creatorId === userObj.uid} />
@@ -86,7 +86,7 @@ const Profile =({userObj, refreshUser})=>{
               </div>
             ))}
           </div>
-        </>);
+        </div>);
 };
 
 

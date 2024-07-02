@@ -14,9 +14,17 @@ const AppRrouter=({isLoggedIn, userObj, refreshUser})=>{
        
         {isLoggedIn?(
           <>
-           <Route path="/" element={<Home userObj={userObj}/>} />
-           <Route path="/profile" element={<Profile userObj ={userObj} refreshUser={refreshUser} />} />
-          </>
+          <Route path="/" element={
+            <div style={{maxWidth: 890, width:"100%", margin: "0 auth", marginTop:80, display: "flex", justifyContent: "center"}}>
+              <Home userObj={userObj}/>
+            </div>
+          }/>
+          <Route path="/profile" element={
+            <div style={{maxWidth: 890, width:"100%", margin: "0 auth", marginTop:80, display: "flex", justifyContent: "center"}}>
+              <Profile userObj ={userObj} refreshUser={refreshUser} />
+            </div>
+          }/>
+        </>
           ):(
              <Route path="/" element={<Auth />} />)
         }
